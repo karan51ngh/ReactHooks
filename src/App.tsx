@@ -1,14 +1,24 @@
-import './App.css'
+// import './App.css'
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import MyAppBarWithMenu from './components/AppBar';
 import UseEffectUsage from './hookUsageComponents/UseEffectUsage'
 import UseStateUsage from './hookUsageComponents/UseStateUsage'
+import UseContextUsage from './hookUsageComponents/UseContextUsage'
+
 
 function App() {
-
+  const theme = createTheme();
   return (
-    <div>
-      <UseStateUsage />
-      <UseEffectUsage />
-    </div>
+    
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <MyAppBarWithMenu />
+        <UseStateUsage />
+        <UseEffectUsage />
+        <UseContextUsage />
+      </ThemeProvider>
+
   )
 }
 
